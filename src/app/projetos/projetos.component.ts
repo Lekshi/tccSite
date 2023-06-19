@@ -1,14 +1,12 @@
+import { Router, NavigationEnd } from '@angular/router';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-projetos',
+  templateUrl: './projetos.component.html',
+  styleUrls: ['./projetos.component.css']
 })
-export class AppComponent implements AfterViewInit {
-  title = 'EuDiversidade';
-
+export class ProjetosComponent implements AfterViewInit {
   @ViewChild('targetComponent') targetComponent: ElementRef | undefined;
 
   ngAfterViewInit() {

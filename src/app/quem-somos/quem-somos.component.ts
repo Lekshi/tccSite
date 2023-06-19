@@ -2,11 +2,11 @@ import { Router, NavigationEnd } from '@angular/router';
 import { Component, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-quem-somos',
+  templateUrl: './quem-somos.component.html',
+  styleUrls: ['./quem-somos.component.css']
 })
-export class HomeComponent {
+export class QuemSomosComponent {
   constructor(private router: Router, private elementRef: ElementRef) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
