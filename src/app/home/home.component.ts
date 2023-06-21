@@ -1,5 +1,5 @@
-import { Router, NavigationEnd } from '@angular/router';
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ScrollServiceService } from '../scroll-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +7,5 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private router: Router, private elementRef: ElementRef) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.scrollIntoView();
-      }
-    });
-  }
 
-  private scrollIntoView(): void {
-    const targetElement = this.elementRef.nativeElement.querySelector('#targetComponent');
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
 }

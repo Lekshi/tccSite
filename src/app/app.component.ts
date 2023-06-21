@@ -1,23 +1,13 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { ScrollServiceService } from './scroll-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   title = 'EuDiversidade';
-
-  @ViewChild('targetComponent') targetComponent: ElementRef | undefined;
-
-  ngAfterViewInit() {
-    this.scrollIntoView();
-  }
-
-  private scrollIntoView(): void {
-    if (this.targetComponent) {
-      this.targetComponent.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
 }

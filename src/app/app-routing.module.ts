@@ -1,17 +1,24 @@
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ProjetosComponent } from './projetos/projetos.component';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+
+const routerOptions : ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 64]
+}
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'projetos', component:ProjetosComponent},
-  {path:'quem-somos', component:QuemSomosComponent}
+  {path:'', redirectTo: '/home', pathMatch:'full'},
+  {path:'home', component:HomeComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes, routerOptions)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
